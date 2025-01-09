@@ -7,6 +7,12 @@ public class ImpresoraService {
     
     private Imprimible documento;
     
+    public ImpresoraService(){}
+    
+    public ImpresoraService(Imprimible documento){
+        this.documento = documento;
+    }
+    
     public void imprimirDocumento(){
         System.out.println(documento.imprimir());
     }

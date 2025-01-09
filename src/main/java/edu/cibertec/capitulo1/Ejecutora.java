@@ -12,8 +12,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Ejecutora {
     
     public static void main(String[] args) {
-        ApplicationContext contexto = new ClassPathXmlApplicationContext("beans.xml");
-        //ApplicationContext contexto = new AnnotationConfigApplicationContext(AppConfig.class);
+        //ApplicationContext contexto = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext contexto = new AnnotationConfigApplicationContext(AppConfig.class);
         HolaMundo hm = (HolaMundo) contexto.getBean("holaMundoBean");
         hm.saludar();
         

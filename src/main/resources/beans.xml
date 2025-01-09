@@ -9,5 +9,11 @@
         <property name="nombre" value="alumnos backend"/>
     </bean>
     
+    <bean id="impresoraService" class="edu.cibertec.capitulo1.service.ImpresoraService">
+        <property name="documento" ref="documentoExcel"/>
+    </bean>
+    
+    <bean id="documentoExcel" class="edu.cibertec.capitulo1.beans.DocumentoExcel"/>
+    
 
 </beans>

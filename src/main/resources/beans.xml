@@ -18,7 +18,9 @@
         <constructor-arg ref="documentoExcel"/>
     </bean>
     
-    <bean id="documentoExcel" class="edu.cibertec.capitulo1.beans.DocumentoExcel"/>
+    <bean id="documentoExcel" class="edu.cibertec.capitulo1.beans.DocumentoExcel"
+    init-method="iniciar" destroy-method="destruir">   
+    </bean>
     
 
 </beans>

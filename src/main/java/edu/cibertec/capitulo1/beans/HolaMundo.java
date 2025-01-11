@@ -2,8 +2,9 @@
 package edu.cibertec.capitulo1.beans;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-
+@Component("holaMundoBean")
 public class HolaMundo {
     
     @Value("Alumnos desde anotaciones")

@@ -1,6 +1,9 @@
 
 package edu.cibertec.capitulo1.beans;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class DocumentoExcel implements Imprimible{
 
     @Override

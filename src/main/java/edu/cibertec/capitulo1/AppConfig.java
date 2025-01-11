@@ -6,9 +6,11 @@ import edu.cibertec.capitulo1.beans.DocumentoTexto;
 import edu.cibertec.capitulo1.beans.HolaMundo;
 import edu.cibertec.capitulo1.service.ImpresoraService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = {"edu.cibertec.capitulo1"})
 public class AppConfig {
  
     @Bean

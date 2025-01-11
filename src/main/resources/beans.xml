@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 ">
     
-    <bean id="holaMundoBean" class="edu.cibertec.capitulo1.beans.HolaMundo">
+    <bean id="holaMundoBean" class="edu.cibertec.capitulo1.beans.HolaMundo" scope="prototype">
         <property name="nombre" value="alumnos backend"/>
     </bean>
     

@@ -12,10 +12,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Ejecutora {
     
     public static void main(String[] args) {
-        //ApplicationContext contexto = new ClassPathXmlApplicationContext("beans.xml");
-        ApplicationContext contexto = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext contexto = new ClassPathXmlApplicationContext("beans.xml");
+        //ApplicationContext contexto = new AnnotationConfigApplicationContext(AppConfig.class);
         HolaMundo hm = (HolaMundo) contexto.getBean("holaMundoBean");
         hm.saludar();
+        
+        HolaMundo hm2 = (HolaMundo) contexto.getBean("holaMundoBean");
+        System.out.println("Compara posición de memoria ="+hm+ "-" +hm2);
+        hm2.setNombre("Segundo nombre");
+        System.out.println("Valor del nombre de primer bean "+hm.getNombre());
         
         ImpresoraService is = (ImpresoraService) contexto.getBean("impresoraService");
         is.imprimirDocumento();

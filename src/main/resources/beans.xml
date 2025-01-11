@@ -2,13 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
                             http://www.springframework.org/schema/beans/spring-beans.xsd
                             http://www.springframework.org/schema/context
-                            http://www.springframework.org/schema/context/spring-context.xsd"
+                            http://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop.xsd"
     default-init-method="iniciar" default-destroy-method="destruir">
     
     <context:component-scan base-package="edu.cibertec.capitulo1"/>
+    
+    <aop:config>
+        <aop:aspect id="aspectAuditoria" ref="auditoriaAOP">
+            <aop:pointcut id="misBeans" expression="execution(* edu.cibertec.capitulo1.beans.*.*(..))"/>
+            <aop:before method="alertarAntes" pointcut-ref="misBeans"/>
+            <aop:after method="alertarDespues" pointcut-ref="misBeans"/>
+            <aop:after-throwing method="alertarExcepcion" pointcut-ref="misBeans"/>
+        </aop:aspect>
+    </aop:config>
     
     <bean id="holaMundoBean" class="edu.cibertec.capitulo1.beans.HolaMundo" scope="prototype">
         <property name="nombre" value="alumnos backend"/>
